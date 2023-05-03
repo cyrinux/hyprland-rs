@@ -546,9 +546,9 @@ pub(crate) fn gen_dispatch_str(cmd: DispatchType, dispatch: bool) -> crate::Resu
         MoveOutOfGroup => "moveoutofgroup".to_string(),
     };
     if let SetCursor(_, _) = cmd {
-        Ok(format!("setcursor {string_to_pass}"))
+        Ok(format!("/setcursor {string_to_pass}"))
     } else if dispatch {
-        Ok(format!("dispatch {string_to_pass}"))
+        Ok(format!("/dispatch {string_to_pass}"))
     } else {
         Ok(string_to_pass)
     }
